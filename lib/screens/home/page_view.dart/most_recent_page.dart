@@ -9,7 +9,7 @@ class MostRecentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getHeight(490),
+      height: getHeight(414),
       width: getWidth(300),
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),

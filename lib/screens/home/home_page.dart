@@ -1,11 +1,9 @@
-import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
 import 'package:mycareer/core/theme/app_icons.dart';
 import 'package:mycareer/cubit/bottomnavbar_cubit/bottomnavbar_cubit.dart';
-import 'package:mycareer/screens/home/tabbar.dart';
 import 'package:mycareer/screens/widgets/appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,8 +31,8 @@ class HomePage extends StatelessWidget {
               type: BottomNavigationBarType.fixed,
               currentIndex: _context.pageIndex,
               onTap: (int index) {
-                son = index;
                 context.read<BottomnavbarCubit>().changePages(index);
+                son = index;
               },
               items: [
                 BottomNavigationBarItem(

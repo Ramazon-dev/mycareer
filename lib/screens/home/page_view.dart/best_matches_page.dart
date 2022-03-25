@@ -14,7 +14,7 @@ class BestMatchesPage extends StatelessWidget {
             child: ListView.builder(
               
               physics: const BouncingScrollPhysics(),
-              itemCount: 3,
+              itemCount: 1,
               itemBuilder: (context, index) {
                 return Container(
                   padding: EdgeInsets.only(

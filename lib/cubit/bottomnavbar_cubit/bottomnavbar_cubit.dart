@@ -8,7 +8,7 @@ import 'package:mycareer/screens/saved_jobs/saved_jobs_page.dart';
 part 'bottomnavbar_state.dart';
 
 class BottomnavbarCubit extends Cubit<BottomnavbarState> {
-  int pageIndex = 1;
+  int pageIndex = 0;
   BottomnavbarCubit() : super(BottomnavbarInitial());
   List listOfPages = [
     const HomeBody(),
