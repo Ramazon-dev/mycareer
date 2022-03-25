@@ -2,117 +2,133 @@ import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
+import 'package:mycareer/screens/home/page_view.dart/best_matches_page.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: getHeight(490),
-      width: getWidth(300),
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-
-
-        
-        itemCount: 3,
-        itemBuilder: (context, index) {
-          return Container(
-            padding: EdgeInsets.only(
-              left: getWidth(30),
-              right: getWidth(30),
-              top: getWidth(30),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: getHeight(30),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'My Career',
+            style: TextStyle(
+              color: AppColors.textColor,
+              fontSize: getHeight(26),
+              fontWeight: FontWeight.w700,
             ),
-            margin: EdgeInsets.symmetric(vertical: getHeight(20)),
-            height: getHeight(357),
-            width: getWidth(300),
+          ).only(left: getHeight(10)),
+          Text(
+            'Find job easy',
+            style: TextStyle(
+              color: AppColors.blue,
+              fontSize: getHeight(17),
+              fontWeight: FontWeight.w300,
+            ),
+          ).only(left: getHeight(10)),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                getHeight(20),
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.cyan,
+                  spreadRadius: 0.1,
+                  blurRadius: 0.1,
+                  offset: Offset(0, 0),
+                ),
+              ],
+            ),
+            margin: EdgeInsets.only(top: getHeight(20)),
+            child: TextFormField(
+              decoration: InputDecoration(
+                fillColor: AppColors.white,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.blue),
+                  borderRadius: BorderRadius.circular(
+                    getHeight(20),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.white),
+                  borderRadius: BorderRadius.circular(
+                    getHeight(20),
+                  ),
+                ),
+                hintText: 'Search',
+                hintStyle: TextStyle(
+                  color: AppColors.grey,
+                  fontSize: getHeight(15),
+                ),
+                suffixIcon: InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.search,
+                    color: AppColors.textColor,
+                    size: getHeight(25),
+                  ),
+                ),
+              ),
+            ),
+          ).only(bottom: getHeight(20)),
+          Container(
+            margin: EdgeInsets.only(bottom: getHeight(10)),
+            height: getHeight(67),
+            width: getWidth(320),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(
                 getHeight(20),
               ),
             ),
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: AppColors.textColor,
-                      radius: getHeight(30),
-                    ).only(right: getWidth(20)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Need web Designer",
-                          style: TextStyle(
-                            color: AppColors.textColor,
-                            fontSize: getHeight(15),
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ).only(bottom: getHeight(10)),
-                        Text(
-                          'Price: \$350-\$500',
-                          style: TextStyle(
-                            color: AppColors.blue,
-                            fontSize: getHeight(14),
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ).only(bottom: getHeight(20)),
-                Text(
-                  """
-Our site obviously will not be exactly the same, but the same type of concepts will be there.
-
-If you think you can do this work, please reply with ONE SINGLE LINK that is the closest to emulating what you see above...
-                """,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: AppColors.textColor,
-                    fontSize: getHeight(14),
-                    fontWeight: FontWeight.w400,
+                Container(
+                  margin: EdgeInsets.only(
+                    top: getHeight(10),
+                    left: getWidth(20),
+                    right: getWidth(10),
+                    bottom: getHeight(10),
                   ),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.textColor,
-                    fixedSize: Size(getWidth(240), getHeight(40)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Submit proposales",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: getHeight(14),
-                      fontWeight: FontWeight.w400,
+                  height: getHeight(47),
+                  width: getWidth(120),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(
+                      getHeight(15),
                     ),
                   ),
                 ),
                 Container(
-                  height: getHeight(30),
-                  width: getWidth(290),
-                  alignment: Alignment.bottomCenter,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Icon(Icons.remove_red_eye_outlined)
-                          .only(right: getWidth(10)),
-                      const Text("432").only(right: getWidth(15)),
-                      const Text("22:16").only(right: getWidth(15)),
-                    ],
+                  margin: EdgeInsets.only(
+                    top: getHeight(10),
+                    left: getWidth(10),
+                    right: getWidth(20),
+                    bottom: getHeight(10),
                   ),
-                )
+                  height: getHeight(47),
+                  width: getWidth(120),
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(
+                      getHeight(15),
+                    ),
+                  ),
+                ),
               ],
             ),
-          );
-        },
+          ),
+          const BestMatchesPage(),
+        ],
       ),
     );
   }
