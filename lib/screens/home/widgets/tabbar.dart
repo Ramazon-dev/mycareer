@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
-import 'package:mycareer/cubit/bottomnavbar_cubit/bottomnavbar_cubit.dart';
 import 'package:mycareer/cubit/home_cubit/home_cubit.dart';
 import 'package:mycareer/screens/home/page_view.dart/best_matches_page.dart';
 import 'package:mycareer/screens/home/page_view.dart/most_recent_page.dart';
