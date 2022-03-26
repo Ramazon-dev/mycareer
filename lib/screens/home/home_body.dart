@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
 import 'package:mycareer/cubit/home_cubit/home_cubit.dart';
-import 'package:mycareer/screens/home/page_view.dart/best_matches_page.dart';
 import 'package:mycareer/screens/home/widgets/tabbar.dart';
 
 class HomeBody extends StatelessWidget {
