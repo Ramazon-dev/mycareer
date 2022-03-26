@@ -85,4 +85,31 @@ class AppIcons {
       color: color ?? AppColors.blue,
     );
   }
+
+  static SvgPicture share({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/ic_share.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture more({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/ic_more.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture info({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/ic_info.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
 }

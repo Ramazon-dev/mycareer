@@ -18,6 +18,7 @@ class AppColors {
   static const Color scaffoldColor = Color(0xFFf3f3f3);
 
   static const Color greyAccent = Color(0xFFF7F7F7);
+  static const Color lightGrey = Color(0xFFE2E2E2);
 
   static List<Color> gradientBlue = [
     const Color(0xFF333857),
