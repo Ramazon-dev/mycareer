@@ -1,8 +1,8 @@
-# mycareer
+# My Career
 
 A new Flutter project.
 
-## Getting Started
+## Qani boshladik
 
 This project is a starting point for a Flutter application.
 
