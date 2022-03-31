@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'My Career',
-      theme: darkThemeData(),
-      // themeMode: ThemeMode.dark,
+      theme: lightThemeData(),
+      // themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      
+
       home: const HomePage(),
     );
   }

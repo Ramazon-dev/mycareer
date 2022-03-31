@@ -28,6 +28,7 @@ class HomeTabbar extends StatelessWidget {
           return BlocBuilder<DarkmodeCubit, DarkmodeState>(
             builder: (logic, state) {
               DarkmodeCubit _logic = logic.watch<DarkmodeCubit>();
+              debugPrint("debugprint isDark: ${_logic.isDark}");
               return Column(
                 children: [
                   Container(
@@ -36,9 +37,7 @@ class HomeTabbar extends StatelessWidget {
                     height: getHeight(67),
                     width: getWidth(320),
                     decoration: BoxDecoration(
-                      color: _logic.isDark == true
-                          ? AppColors.darkColor
-                          : AppColors.darkColor,
+                      color: AppColors.white,
                       borderRadius: BorderRadius.circular(
                         getHeight(20),
                       ),

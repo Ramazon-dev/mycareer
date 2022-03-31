@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
+import 'package:mycareer/cubit/darkmode_cubit/darkmode_cubit.dart';
 
 class TextWidgetSubtitle extends StatelessWidget {
   final String text;
@@ -15,13 +17,18 @@ class TextWidgetSubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        color: color,
-        fontWeight: FontWeight.w400,
-        fontSize: getHeight(size),
-      ),
+    return BlocBuilder<DarkmodeCubit, DarkmodeState>(
+      builder: (context, state) {
+        return Text(
+          text,
+          style: TextStyle(
+            color:
+                context.watch<DarkmodeCubit>().isDark ? color : AppColors.white,
+            fontWeight: FontWeight.w400,
+            fontSize: getHeight(size),
+          ),
+        );
+      },
     );
   }
 }

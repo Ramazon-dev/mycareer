@@ -4,6 +4,12 @@ import 'package:mycareer/core/theme/app_colors.dart';
 
 ThemeData lightThemeData() {
   return ThemeData(
+    inputDecorationTheme: const InputDecorationTheme(
+      fillColor: AppColors.white,
+      filled: true,
+      iconColor: AppColors.grey,
+    ),
+    cardColor: AppColors.white,
     scaffoldBackgroundColor: AppColors.scaffoldColor,
     drawerTheme: const DrawerThemeData(
         // backgroundColor: AppColors.textColor,
@@ -11,7 +17,7 @@ ThemeData lightThemeData() {
         ),
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(
-        size: getHeight(25),
+        // size: getHeight(25),
         color: AppColors.textColor,
       ),
     ),
