@@ -3,6 +3,8 @@ import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
 import 'package:mycareer/core/theme/app_icons.dart';
 import 'package:easy_padding/easy_padding.dart';
+import 'package:mycareer/screens/profile/widget/links.dart';
+import 'package:mycareer/screens/profile/widget/portfolio_gridview.dart';
 import 'package:mycareer/screens/widgets/textwidget_subtitle.dart';
 import 'package:mycareer/screens/widgets/textwidget_title.dart';
 
@@ -39,8 +41,10 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         AppIcons.share(),
                         CircleAvatar(
+                          backgroundImage:
+                              const AssetImage('assets/images/profile.png', ),
                           radius: getHeight(60),
-                          backgroundColor: AppColors.textColor,
+                          // backgroundColor: AppColors.textColor,
                         ),
                         AppIcons.more(),
                       ],
@@ -139,7 +143,9 @@ class ProfilePage extends StatelessWidget {
                           );
                         },
                       ),
-                    ),
+                    ).only(bottom: getHeight(30)),
+                    const PortfolioGridviewWidget(),
+                    LinksListWigdet(),
                   ],
                 ),
               ),

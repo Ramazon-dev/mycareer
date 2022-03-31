@@ -112,4 +112,49 @@ class AppIcons {
       color: color ?? AppColors.textColor,
     );
   }
+
+  static SvgPicture instagram({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/instagram_icon.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture linkedin({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/linkedin_icon.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture github({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/github.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture be({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/be.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
+
+  static SvgPicture profile({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/images/profile.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      color: color ?? AppColors.textColor,
+    );
+  }
 }
