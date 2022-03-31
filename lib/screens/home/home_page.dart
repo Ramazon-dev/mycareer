@@ -4,6 +4,7 @@ import 'package:mycareer/core/constants/sizeconfig.dart';
 import 'package:mycareer/core/theme/app_colors.dart';
 import 'package:mycareer/core/theme/app_icons.dart';
 import 'package:mycareer/cubit/bottomnavbar_cubit/bottomnavbar_cubit.dart';
+import 'package:mycareer/cubit/darkmode_cubit/darkmode_cubit.dart';
 import 'package:mycareer/screens/widgets/appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,53 +14,89 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     int son = 0;
-    return BlocProvider(
-      create: (_) => BottomnavbarCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => BottomnavbarCubit(),
+        ),
+        BlocProvider(
+          create: (logic) => DarkmodeCubit(),
+        ),
+      ],
       child: BlocBuilder<BottomnavbarCubit, BottomnavbarState>(
         builder: (context, state) {
-          var _context = context.watch<BottomnavbarCubit>();
-          return Scaffold(
-            appBar: AppBarWidget(),
-            drawer: const Drawer(),
-            body: _context.listOfPages[_context.pageIndex],
-            bottomNavigationBar: BottomNavigationBar(
-              selectedFontSize: 23,
-              selectedItemColor: Colors.black,
-              unselectedItemColor: Colors.yellow,
-              unselectedFontSize: 15,
-              type: BottomNavigationBarType.fixed,
-              currentIndex: _context.pageIndex,
-              onTap: (int index) {
-                context.read<BottomnavbarCubit>().changePages(index);
-                son = index;
-              },
-              items: [
-                BottomNavigationBarItem(
-                  icon: AppIcons.home(
-                      // color: son == 0 ? Colors.blue : Colors.black,
-                      ),
-                  label: '',
+          BottomnavbarCubit _context = context.watch<BottomnavbarCubit>();
+          return BlocBuilder<DarkmodeCubit, DarkmodeState>(
+            builder: (logic, state) {
+              DarkmodeCubit _logic = logic.watch<DarkmodeCubit>();
+
+              return Scaffold(
+                appBar: AppBarWidget(
+                  widget: Switch(
+                    value: logic.watch<DarkmodeCubit>().isDark,
+                    onChanged: (v) {
+                      logic.read<DarkmodeCubit>().ozgardi(v);
+                    },
+                  ),
                 ),
-                BottomNavigationBarItem(
-                  icon: AppIcons.document(
-                      // color: son == 1 ? Colors.blue : Colors.black,
+                drawer: const Drawer(),
+                body: _context.listOfPages[_context.pageIndex],
+                bottomNavigationBar: BottomNavigationBar(
+                  selectedFontSize: 23,
+                  backgroundColor:
+                      _logic.isDark ? AppColors.white : AppColors.darkColor,
+                  unselectedFontSize: 15,
+                  type: BottomNavigationBarType.fixed,
+                  currentIndex: _context.pageIndex,
+                  onTap: (int index) {
+                    context.read<BottomnavbarCubit>().changePages(index);
+                    son = index;
+                  },
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: AppIcons.home(
+                        color: _logic.isDark == false
+                            ? AppColors.white
+                            : son == 0
+                                ? Colors.blue
+                                : Colors.black,
                       ),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: AppIcons.notification(
-                      // color: son == 2 ? Colors.blue : Colors.black,
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: AppIcons.document(
+                        color: _logic.isDark == false
+                            ? AppColors.white
+                            : son == 1
+                                ? Colors.blue
+                                : Colors.black,
                       ),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: AppIcons.person(
-                      // color: son == 3 ? Colors.blue : Colors.black,
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: AppIcons.notification(
+                        color: _logic.isDark == false
+                            ? AppColors.white
+                            : son == 2
+                                ? Colors.blue
+                                : Colors.black,
                       ),
-                  label: '',
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: AppIcons.person(
+                        color: _logic.isDark == false
+                            ? AppColors.white
+                            : son == 3
+                                ? Colors.blue
+                                : Colors.black,
+                      ),
+                      label: '',
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              );
+            },
           );
         },
       ),

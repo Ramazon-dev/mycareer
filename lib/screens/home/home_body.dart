@@ -46,7 +46,7 @@ class HomeBody extends StatelessWidget {
                     ),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.cyan,
+                        // color: Colors.cyan,
                         spreadRadius: 0.1,
                         blurRadius: 0.1,
                         offset: Offset(0, 0),
@@ -56,10 +56,10 @@ class HomeBody extends StatelessWidget {
                   margin: EdgeInsets.only(top: getHeight(20)),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      fillColor: AppColors.white,
-                      filled: true,
+                      // fillColor: AppColors.white,
+                      // filled: true,
                       border: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.blue),
+                        // borderSide: const BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(
                           getHeight(20),
                         ),

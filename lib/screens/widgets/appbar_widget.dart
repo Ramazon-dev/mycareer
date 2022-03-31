@@ -5,7 +5,14 @@ import 'package:mycareer/core/theme/app_icons.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   String text;
-  AppBarWidget({Key? key, this.text = ''}) : super(key: key);
+  VoidCallback? func;
+  Widget? widget;
+  AppBarWidget({
+    Key? key,
+    this.text = '',
+    this.func,
+    this.widget,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +21,8 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: AppIcons.send(color: AppColors.textColor),
+          onPressed: func,
+          icon: widget!,
         ),
       ],
       title: Text(
