@@ -79,7 +79,7 @@ class HomeBody extends StatelessWidget {
                         onTap: () {},
                         child: Icon(
                           Icons.search,
-                          color: AppColors.textColor,
+                          // color: AppColors.textColor,
                           size: getHeight(25),
                         ),
                       ),

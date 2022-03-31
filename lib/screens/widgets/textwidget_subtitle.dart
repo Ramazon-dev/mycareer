@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
+import 'package:mycareer/core/theme/app_colors.dart';
 
 class TextWidgetSubtitle extends StatelessWidget {
   final String text;
   double size;
-  Color color;
+  Color? color;
   TextWidgetSubtitle({
     Key? key,
     required this.text,
     this.size = 14,
-    this.color = const Color(0xff0C2C52),
+    this.color,
   }) : super(key: key);
 
   @override

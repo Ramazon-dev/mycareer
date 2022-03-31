@@ -4,13 +4,13 @@ import 'package:mycareer/core/constants/sizeconfig.dart';
 class TextWidgetTitle extends StatelessWidget {
   final String text;
   double size;
-  Color color;
+  Color? color;
 
   TextWidgetTitle({
     Key? key,
     required this.text,
     this.size = 16,
-    this.color = const Color(0xff2261B1),
+    this.color,
   }) : super(key: key);
 
   @override

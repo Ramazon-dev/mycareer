@@ -15,7 +15,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: AppColors.scaffoldColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(
@@ -41,8 +40,9 @@ class ProfilePage extends StatelessWidget {
                       children: [
                         AppIcons.share(),
                         CircleAvatar(
-                          backgroundImage:
-                              const AssetImage('assets/images/profile.png', ),
+                          backgroundImage: const AssetImage(
+                            'assets/images/profile.png',
+                          ),
                           radius: getHeight(60),
                           // backgroundColor: AppColors.textColor,
                         ),

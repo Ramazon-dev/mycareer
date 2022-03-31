@@ -19,7 +19,6 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           var _context = context.watch<BottomnavbarCubit>();
           return Scaffold(
-            backgroundColor: AppColors.scaffoldColor,
             appBar: AppBarWidget(),
             drawer: const Drawer(),
             body: _context.listOfPages[_context.pageIndex],
@@ -37,26 +36,26 @@ class HomePage extends StatelessWidget {
               items: [
                 BottomNavigationBarItem(
                   icon: AppIcons.home(
-                    color: son == 0 ? Colors.blue : Colors.black,
-                  ),
+                      // color: son == 0 ? Colors.blue : Colors.black,
+                      ),
                   label: '',
                 ),
                 BottomNavigationBarItem(
                   icon: AppIcons.document(
-                    color: son == 1 ? Colors.blue : Colors.black,
-                  ),
+                      // color: son == 1 ? Colors.blue : Colors.black,
+                      ),
                   label: '',
                 ),
                 BottomNavigationBarItem(
                   icon: AppIcons.notification(
-                    color: son == 2 ? Colors.blue : Colors.black,
-                  ),
+                      // color: son == 2 ? Colors.blue : Colors.black,
+                      ),
                   label: '',
                 ),
                 BottomNavigationBarItem(
                   icon: AppIcons.person(
-                    color: son == 3 ? Colors.blue : Colors.black,
-                  ),
+                      // color: son == 3 ? Colors.blue : Colors.black,
+                      ),
                   label: '',
                 ),
               ],
