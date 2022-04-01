@@ -1,3 +1,4 @@
+import 'package:easy_padding/extentions/padding_extentions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mycareer/core/constants/sizeconfig.dart';
@@ -6,7 +7,9 @@ import 'package:mycareer/core/theme/app_icons.dart';
 import 'package:mycareer/cubit/bottomnavbar_cubit/bottomnavbar_cubit.dart';
 import 'package:mycareer/cubit/darkmode_cubit/darkmode_cubit.dart';
 import 'package:mycareer/screens/chat/chat_menu.dart';
+import 'package:mycareer/screens/home/widgets/showmodalbottomsheet_widget.dart';
 import 'package:mycareer/screens/widgets/appbar_widget.dart';
+import 'package:mycareer/screens/widgets/textwidget_title.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,6 +37,7 @@ class HomePage extends StatelessWidget {
 
               return Scaffold(
                 appBar: AppBarWidget(
+                  leading: ShowModalBottomSheetWidget(),
                   widget: InkWell(
                     child: AppIcons.send(color: AppColors.textColor),
                     onTap: () {
@@ -46,7 +50,6 @@ class HomePage extends StatelessWidget {
                     },
                   ),
                 ),
-                drawer: const Drawer(),
                 body: _context.listOfPages[_context.pageIndex],
                 bottomNavigationBar: BottomNavigationBar(
                   selectedFontSize: 23,
@@ -65,39 +68,36 @@ class HomePage extends StatelessWidget {
                         color: _logic.isDark == false
                             ? AppColors.white
                             : son == 0
-                                ? Colors.blue
-                                : Colors.black,
+                                ? AppColors.textColor
+                                : AppColors.blue,
                       ),
                       label: '',
                     ),
                     BottomNavigationBarItem(
                       icon: AppIcons.document(
-                        color: _logic.isDark == false
-                            ? AppColors.white
-                            : son == 1
-                                ? Colors.blue
-                                : Colors.black,
-                      ),
+                          color: _logic.isDark == false
+                              ? AppColors.white
+                              : son == 1
+                                  ? AppColors.textColor
+                                  : AppColors.blue),
                       label: '',
                     ),
                     BottomNavigationBarItem(
                       icon: AppIcons.notification(
-                        color: _logic.isDark == false
-                            ? AppColors.white
-                            : son == 2
-                                ? Colors.blue
-                                : Colors.black,
-                      ),
+                          color: _logic.isDark == false
+                              ? AppColors.white
+                              : son == 2
+                                  ? AppColors.textColor
+                                  : AppColors.blue),
                       label: '',
                     ),
                     BottomNavigationBarItem(
                       icon: AppIcons.person(
-                        color: _logic.isDark == false
-                            ? AppColors.white
-                            : son == 3
-                                ? Colors.blue
-                                : Colors.black,
-                      ),
+                          color: _logic.isDark == false
+                              ? AppColors.white
+                              : son == 3
+                                  ? AppColors.textColor
+                                  : AppColors.blue),
                       label: '',
                     ),
                   ],

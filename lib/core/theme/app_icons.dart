@@ -27,8 +27,8 @@ class AppIcons {
     return SvgPicture.asset(
       "assets/icons/ic_drawer_menu.svg",
       fit: BoxFit.cover,
-      height: size ?? 24.0,
-      color: color ?? AppColors.blue,
+      height: size ?? 17.0,
+      color: color ?? AppColors.textColor,
     );
   }
 
@@ -68,9 +68,36 @@ class AppIcons {
     );
   }
 
+  static SvgPicture settings({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/ic_settings.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.blue,
+    );
+  }
+
+  static SvgPicture nightmode({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/nightmode.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.blue,
+    );
+  }
+
   static SvgPicture sticker({Color? color, double? size}) {
     return SvgPicture.asset(
       "assets/icons/ic_sticker.svg",
+      fit: BoxFit.cover,
+      height: size ?? 24.0,
+      color: color ?? AppColors.blue,
+    );
+  }
+
+  static SvgPicture star({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/icons/ic_star.svg",
       fit: BoxFit.cover,
       height: size ?? 24.0,
       color: color ?? AppColors.blue,
