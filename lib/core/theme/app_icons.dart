@@ -193,4 +193,13 @@ class AppIcons {
       // color: color ?? AppColors.textColor,
     );
   }
+
+  static SvgPicture splash({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/images/splash.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      // color: color ?? AppColors.textColor,
+    );
+  }
 }
