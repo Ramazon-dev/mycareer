@@ -5,6 +5,7 @@ import 'package:mycareer/core/theme/app_colors.dart';
 import 'package:mycareer/core/theme/app_icons.dart';
 import 'package:mycareer/cubit/bottomnavbar_cubit/bottomnavbar_cubit.dart';
 import 'package:mycareer/cubit/darkmode_cubit/darkmode_cubit.dart';
+import 'package:mycareer/screens/chat/chat_menu.dart';
 import 'package:mycareer/screens/widgets/appbar_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,10 +34,15 @@ class HomePage extends StatelessWidget {
 
               return Scaffold(
                 appBar: AppBarWidget(
-                  widget: Switch(
-                    value: logic.watch<DarkmodeCubit>().isDark,
-                    onChanged: (v) {
-                      logic.read<DarkmodeCubit>().ozgardi(v);
+                  widget: InkWell(
+                    child: AppIcons.send(color: AppColors.textColor),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ChatMenuPage(),
+                        ),
+                      );
                     },
                   ),
                 ),

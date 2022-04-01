@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Career',
       theme: lightThemeData(),
-      // themeMode: ThemeMode.light,
+      // themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
 
       home: const HomePage(),

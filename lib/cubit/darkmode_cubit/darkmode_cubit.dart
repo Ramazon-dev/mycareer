@@ -5,7 +5,7 @@ part 'darkmode_state.dart';
 
 class DarkmodeCubit extends Cubit<DarkmodeState> {
   DarkmodeCubit() : super(DarkmodeInitial());
-  bool isDark = false;
+  bool isDark = true;
   ozgardi(bool isActive) {
     isDark = isActive;
     debugPrint("is dark $isDark");

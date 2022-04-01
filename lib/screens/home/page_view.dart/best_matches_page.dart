@@ -32,8 +32,7 @@ class BestMatchesPage extends StatelessWidget {
                 height: getHeight(357),
                 width: getWidth(300),
                 decoration: BoxDecoration(
-                  color:
-                      _context.isDark ? AppColors.white : AppColors.darkColor,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(
                     getHeight(20),
                   ),
@@ -71,16 +70,16 @@ class BestMatchesPage extends StatelessWidget {
                     ).only(bottom: getHeight(20)),
                     TextWidgetSubtitle(
                       text: """
-    Our site obviously will not be exactly the same, but the same type of concepts will be there.
+Our site obviously will not be exactly the same, but the same type of concepts will be there.
     
-    If you think you can do this work, please reply with ONE SINGLE LINK that is the closest to emulating what you see above...
+If you think you can do this work, please reply with ONE SINGLE LINK that is the closest to emulating what you see above...
                     """,
-                      // textAlign: TextAlign.left,
-                      // style: TextStyle(
-                      //   color: AppColors.textColor,
-                      //   fontSize: getHeight(14),
-                      //   fontWeight: FontWeight.w400,
-                      // ),
+                      color: AppColors.textColor,
+                      //   textAlign: TextAlign.left,
+                      //   style: TextStyle(
+                      //     fontSize: getHeight(14),
+                      //     fontWeight: FontWeight.w400,
+                      //   ),
                     ),
                     ElevatedButtonWidget(
                       ontap: () {},
@@ -95,8 +94,18 @@ class BestMatchesPage extends StatelessWidget {
                         children: [
                           const Icon(Icons.remove_red_eye_outlined)
                               .only(right: getWidth(10)),
-                          const Text("432").only(right: getWidth(15)),
-                          const Text("22:16").only(right: getWidth(15)),
+                          const Text(
+                            "432",
+                            style: TextStyle(
+                              color: AppColors.textColor,
+                            ),
+                          ).only(right: getWidth(15)),
+                          const Text(
+                            "22:16",
+                            style: TextStyle(
+                              color: AppColors.textColor,
+                            ),
+                          ).only(right: getWidth(15)),
                         ],
                       ),
                     )

@@ -157,4 +157,13 @@ class AppIcons {
       color: color ?? AppColors.textColor,
     );
   }
+
+  static SvgPicture scaffold({Color? color, double? size}) {
+    return SvgPicture.asset(
+      "assets/images/scaffold.svg",
+      fit: BoxFit.cover,
+      height: size ?? 20.0,
+      // color: color ?? AppColors.textColor,
+    );
+  }
 }

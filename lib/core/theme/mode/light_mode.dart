@@ -15,7 +15,7 @@ ThemeData lightThemeData() {
         // backgroundColor: AppColors.textColor,
         // scrimColor: AppColors.textColor,
         ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(
         // size: getHeight(25),
         color: AppColors.textColor,
@@ -29,6 +29,12 @@ ThemeData lightThemeData() {
         primary: AppColors.textColor,
       ),
     ),
+    // colorScheme: ColorScheme.light(
+    //   primary: Colors.yellow,
+    // ),
+    primaryColor: Colors.yellow,
+    primaryColorLight: Colors.yellow,
+    cardTheme: const CardTheme(color: AppColors.grey),
     textTheme: const TextTheme(
       headline1: TextStyle(
         color: AppColors.white,
@@ -36,7 +42,7 @@ ThemeData lightThemeData() {
       headline2: TextStyle(
         color: AppColors.white,
       ),
-      bodyText1: TextStyle(
+      bodyText2: TextStyle(
         color: AppColors.white,
       ),
       overline: TextStyle(
