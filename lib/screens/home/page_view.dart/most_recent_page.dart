@@ -101,8 +101,18 @@ If you think you can do this work, please reply with ONE SINGLE LINK that is the
                     children: [
                       const Icon(Icons.remove_red_eye_outlined)
                           .only(right: getWidth(10)),
-                      const Text("432").only(right: getWidth(15)),
-                      const Text("22:16").only(right: getWidth(15)),
+                      const Text(
+                        "432",
+                        style: TextStyle(
+                          color: AppColors.textColor,
+                        ),
+                      ).only(right: getWidth(15)),
+                      const Text(
+                        "22:16",
+                        style: TextStyle(
+                          color: AppColors.textColor,
+                        ),
+                      ).only(right: getWidth(15)),
                     ],
                   ),
                 )

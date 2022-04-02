@@ -28,7 +28,6 @@ class HomeTabbar extends StatelessWidget {
           return BlocBuilder<DarkmodeCubit, DarkmodeState>(
             builder: (logic, state) {
               DarkmodeCubit _logic = logic.watch<DarkmodeCubit>();
-              debugPrint("debugprint isDark: ${_logic.isDark}");
               return Column(
                 children: [
                   Container(

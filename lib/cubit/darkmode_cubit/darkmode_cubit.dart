@@ -8,7 +8,6 @@ class DarkmodeCubit extends Cubit<DarkmodeState> {
   bool isDark = true;
   ozgardi(bool isActive) {
     isDark = isActive;
-    debugPrint("is dark $isDark");
     emit(DarkmodeInitial());
   }
 }

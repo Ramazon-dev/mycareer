@@ -16,78 +16,80 @@ class HomeBody extends StatelessWidget {
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           var _context = context.watch<HomeCubit>();
-          return Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: getHeight(30),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'My Career',
-                  style: TextStyle(
-                    color: AppColors.textColor,
-                    fontSize: getHeight(26),
-                    fontWeight: FontWeight.w700,
-                  ),
-                ).only(left: getHeight(10)),
-                Text(
-                  'Find job easy',
-                  style: TextStyle(
-                    color: AppColors.blue,
-                    fontSize: getHeight(17),
-                    fontWeight: FontWeight.w300,
-                  ),
-                ).only(left: getHeight(10)),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      getHeight(20),
+          return SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: getHeight(30),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'My Career',
+                    style: TextStyle(
+                      color: AppColors.textColor,
+                      fontSize: getHeight(26),
+                      fontWeight: FontWeight.w700,
                     ),
-                    boxShadow: const [
-                      BoxShadow(
-                        // color: Colors.cyan,
-                        spreadRadius: 0.1,
-                        blurRadius: 0.1,
-                        offset: Offset(0, 0),
+                  ).only(left: getHeight(10)),
+                  Text(
+                    'Find job easy',
+                    style: TextStyle(
+                      color: AppColors.blue,
+                      fontSize: getHeight(17),
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ).only(left: getHeight(10)),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        getHeight(20),
                       ),
-                    ],
-                  ),
-                  margin: EdgeInsets.only(top: getHeight(20)),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      // fillColor: AppColors.white,
-                      // filled: true,
-                      border: OutlineInputBorder(
-                        // borderSide: const BorderSide(color: Colors.blue),
-                        borderRadius: BorderRadius.circular(
-                          getHeight(20),
+                      boxShadow: const [
+                        BoxShadow(
+                          // color: Colors.cyan,
+                          spreadRadius: 0.1,
+                          blurRadius: 0.1,
+                          offset: Offset(0, 0),
                         ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(
-                          getHeight(20),
+                      ],
+                    ),
+                    margin: EdgeInsets.only(top: getHeight(20)),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        // fillColor: AppColors.white,
+                        // filled: true,
+                        border: OutlineInputBorder(
+                          // borderSide: const BorderSide(color: Colors.blue),
+                          borderRadius: BorderRadius.circular(
+                            getHeight(20),
+                          ),
                         ),
-                      ),
-                      hintText: 'Search',
-                      hintStyle: TextStyle(
-                        color: AppColors.grey,
-                        fontSize: getHeight(15),
-                      ),
-                      suffixIcon: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.search,
-                          // color: AppColors.textColor,
-                          size: getHeight(25),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(
+                            getHeight(20),
+                          ),
+                        ),
+                        hintText: 'Search',
+                        hintStyle: TextStyle(
+                          color: AppColors.grey,
+                          fontSize: getHeight(15),
+                        ),
+                        suffixIcon: InkWell(
+                          onTap: () {},
+                          child: Icon(
+                            Icons.search,
+                            // color: AppColors.textColor,
+                            size: getHeight(25),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ).only(bottom: getHeight(20)),
-                const HomeTabbar()
-              ],
+                  ).only(bottom: getHeight(20)),
+                  const HomeTabbar()
+                ],
+              ),
             ),
           );
         },

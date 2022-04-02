@@ -33,7 +33,6 @@ class HomePage extends StatelessWidget {
           return BlocBuilder<DarkmodeCubit, DarkmodeState>(
             builder: (logic, state) {
               DarkmodeCubit _logic = logic.watch<DarkmodeCubit>();
-              debugPrint("aaaaaaaaaaaaaaaaaa: ${_logic.isDark}");
 
               return Scaffold(
                 appBar: AppBarWidget(
