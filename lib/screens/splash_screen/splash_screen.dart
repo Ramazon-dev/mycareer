@@ -16,8 +16,8 @@ class SplashSceen extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.only(
-          left: getWidth(25),
-          right: getWidth(25),
+          left: getWidth(30),
+          right: getWidth(30),
           top: getHeight(100),
         ),
         child: Column(
@@ -29,7 +29,10 @@ class SplashSceen extends StatelessWidget {
               height: getHeight(307),
             ),
             TextWidgetTitle(
-              text: "Started to Discover New Job",
+              text: """
+Started to Discover
+      New Job
+""",
               size: getHeight(24),
             ).only(bottom: getHeight(100), top: getHeight(100)),
             ElevatedButtonWidget(
