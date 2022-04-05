@@ -87,7 +87,7 @@ class ProfilePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextWidgetTitle(
-                          text: 'Profile level: beginner',
+                          text: 'Profile level: Master',
                           size: getHeight(18),
                         ),
                         AppIcons.info(),
